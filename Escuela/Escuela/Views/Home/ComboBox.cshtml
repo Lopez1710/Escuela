@@ -1,0 +1,13 @@
+﻿@model Escuela.Entidades.Enrollment
+@{
+    ViewData["Title"] = "ComboBox";
+}
+
+<h1>ComboBox</h1>
+@using (Html.BeginForm("getcombobox","Home",FormMethod.Post)) {
+@Html.DropDownListFor(c => c.CourseID, new SelectList(ViewBag.listacourse, "Value", "Text"), "Selecciona un curso", new { @class = "Form-Control" })
+    <br />
+@Html.DropDownListFor(c => c.StudentID, new SelectList(ViewBag.listastudent, "Value", "Text"), "Selecciona un estudiante", new { @class = "Form-Control" })
+
+<input type="submit" value="enviar"/>
+}

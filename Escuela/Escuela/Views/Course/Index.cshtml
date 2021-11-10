@@ -1,0 +1,39 @@
+﻿@model List<Escuela.Entidades.Course>
+@{
+    ViewData["Title"] = "Index";
+}
+<head>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://kit.fontawesome.com/c7b6e5d378.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="~/css/estilo.css" />
+
+</head>
+<body>
+    <div class="animate__animated animate__fadeIn">
+        <table id="mitabla" class="table table-striped table-bordered text-center">
+            @Html.ActionLink("Agregar", "Datos", "Course", null, new { @class = "btn btn-primary" })
+            <thead class="table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Curso</th>
+                    <th>Creditos</th>
+                    <th></th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.CourseId</td>
+                        <td>@item.Title</td>
+                        <td>@item.Credits</td>
+                        <td>@Html.ActionLink("Editar", "Datos", "Course", new { id = item.CourseId }, new { @class = "btn btn-primary" })
+                            @Html.ActionLink("Eliminar", "Confirmacion", "Course", new { id = item.CourseId }, new { @class = "btn btn-danger" })</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        </div>
+    </body>

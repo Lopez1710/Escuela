@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Escuela.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20210930171646_Migrations")]
+    [Migration("20211107182419_Migrations")]
     partial class Migrations
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -29,6 +29,9 @@ namespace Escuela.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int>("Credits")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Estado")
                         .HasColumnType("int");
 
                     b.Property<string>("Title")
@@ -73,6 +76,9 @@ namespace Escuela.Migrations
 
                     b.Property<DateTime>("EnrollmentsDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<int>("Estado")
+                        .HasColumnType("int");
 
                     b.Property<string>("FirstMidName")
                         .HasColumnType("nvarchar(max)");

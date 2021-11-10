@@ -1,0 +1,45 @@
+﻿@model List<Escuela.Entidades.Enrollment>
+@{
+    ViewData["Title"] = "ListaUnida";
+}
+
+<h1>ListaUnida</h1>
+<table id="mitabla" class="table">
+    <thead>
+        <tr>
+            <th>id enrollement</th>
+            <th>ID student</th>
+            <th>Fists name</th>
+            <th>lastname</th>
+            <th>Curso Al que pertenese</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var iteracion in Model)
+        {
+            <tr>
+                <td>@iteracion.EnrollmentId</td>
+                <td>@iteracion.StudentID</td>
+                <td>@iteracion.Student.FirstMidName</td>
+                <td>@iteracion.Student.LastName</td>
+                <td>@iteracion.Course.Title</td>
+
+
+            </tr>
+        }
+    </tbody>
+
+
+</table>
+@*@section scripts{
+
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var table = $('#mitabla').DataTable();
+        }
+        )
+    </script>
+}*@
+

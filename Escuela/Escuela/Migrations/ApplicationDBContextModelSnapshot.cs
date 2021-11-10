@@ -29,6 +29,9 @@ namespace Escuela.Migrations
                     b.Property<int>("Credits")
                         .HasColumnType("int");
 
+                    b.Property<int>("Estado")
+                        .HasColumnType("int");
+
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
@@ -71,6 +74,9 @@ namespace Escuela.Migrations
 
                     b.Property<DateTime>("EnrollmentsDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<int>("Estado")
+                        .HasColumnType("int");
 
                     b.Property<string>("FirstMidName")
                         .HasColumnType("nvarchar(max)");

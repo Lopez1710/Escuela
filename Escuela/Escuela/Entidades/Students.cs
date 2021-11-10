@@ -12,11 +12,13 @@ namespace Escuela.Entidades
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int StudentId { get; set; }
-
+       
         public string LastName { get; set; }
-
+        
         public string FirstMidName { get; set; }
-
+        
+        public int Estado { get; set; } // 1 es activo y 0 es inactivo
+        
         public DateTime EnrollmentsDate { get; set; }
 
         public ICollection<Enrollment> enrollments { get; set; }

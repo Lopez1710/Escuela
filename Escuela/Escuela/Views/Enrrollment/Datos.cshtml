@@ -1,0 +1,33 @@
+﻿@model Escuela.Entidades.Enrollment
+@{
+    ViewData["Title"] = "Datos";
+}
+
+<head>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://kit.fontawesome.com/c7b6e5d378.js" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+    <div class="animate__animated animate__fadeInLeft">
+        @using (Html.BeginForm("Guardar", "Enrrollment", FormMethod.Post))
+        {
+
+            @Html.LabelFor(x => x.StudentID, "Estudiante")
+            <br />
+            @Html.DropDownListFor(c => c.StudentID, new SelectList(ViewBag.Estudiantes, "Value", "Text"), "Selecciona un estudiante", new { @class = "form-control", required = "required" })
+            <br />
+            @Html.LabelFor(x => x.CourseID, "Curso")
+            <br />
+            @Html.DropDownListFor(c => c.CourseID, new SelectList(ViewBag.Cursos, "Value", "Text"), "Selecciona un curso", new { @class = "form-control", required = "required" })
+            <br />
+            @Html.LabelFor(x => x.Grade, "Grado")
+            <br />
+            @Html.DropDownListFor(c => c.Grade, new SelectList(ViewBag.Grado, "Value", "Text"), "Selecciona un grado", new { @class = "form-control", required = "required" })
+
+            <input type="submit" value="Guardar" class="bnt btn-primary " />
+        }
+        </div>
+    </body>

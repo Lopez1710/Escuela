@@ -1,0 +1,22 @@
+﻿@model Escuela.Entidades.Students
+@{
+    ViewData["Title"] = "Confirmacion";
+}
+
+@using (Html.BeginForm("Delete", "Student", FormMethod.Post))
+{
+    @Html.TextBoxFor(x => x.StudentId, new { Type = "hidden" })
+
+    @Html.TextBoxFor(x => x.FirstMidName, new { Type = "hidden" })
+
+    @Html.TextBoxFor(x => x.LastName, new { Type = "hidden" })
+
+    @Html.TextBoxFor(x => x.EnrollmentsDate, new { Type = "hidden" })
+
+    <br />
+    <h3>¿ Quieres eliminar a @Model.FirstMidName @Model.LastName ?</h3>
+    <br />
+    <input type="submit" value="Eliminar" class="bnt btn-danger" />
+    @Html.ActionLink("Cancelar", "Index", "Student", null, new { @class = "btn btn-primary" })
+}
+

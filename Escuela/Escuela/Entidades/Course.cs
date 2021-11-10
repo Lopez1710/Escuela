@@ -17,6 +17,8 @@ namespace Escuela.Entidades
 
         public int Credits { get; set; }
 
+        public int Estado { get; set; } /*activo 1 inactivo 0*/
+
         public ICollection<Enrollment> enrollments { get; set; }
 
     }

@@ -14,7 +14,8 @@ namespace Escuela.Migrations
                     CourseId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Credits = table.Column<int>(type: "int", nullable: false)
+                    Credits = table.Column<int>(type: "int", nullable: false),
+                    Estado = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -29,6 +30,7 @@ namespace Escuela.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     LastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     FirstMidName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Estado = table.Column<int>(type: "int", nullable: false),
                     EnrollmentsDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>

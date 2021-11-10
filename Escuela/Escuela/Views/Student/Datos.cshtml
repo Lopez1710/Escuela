@@ -1,0 +1,34 @@
+﻿@model Escuela.Entidades.Students
+@{
+    ViewData["Title"] = "Save";
+}
+<head>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://kit.fontawesome.com/c7b6e5d378.js" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+    <div class="animate__animated animate__fadeInLeft">
+        @using (Html.BeginForm("Guardar", "Student", FormMethod.Post))
+        {
+            @Html.TextBoxFor(x => x.StudentId, new { Type = "hidden", required = "required" })
+            <br />
+            @Html.LabelFor(x => x.FirstMidName, "Nombre")
+            <br />
+            @Html.TextBoxFor(x => x.FirstMidName, new { @class = "form-control", required = "required" })
+            <br />
+            @Html.LabelFor(x => x.LastName, "Apellido")
+            <br />
+            @Html.TextBoxFor(x => x.LastName, new { @class = "form-control", required = "required" })
+            <br />
+            @Html.LabelFor(x => x.EnrollmentsDate, "Fecha")
+            <br />
+            @Html.TextBoxFor(x => x.EnrollmentsDate, "{0:yyyy-MM-dd}", new { @class = "form-control", Type = "date", required = "required" })
+            <br />
+            <input type="submit" value="Guardar" class="bnt btn-primary" />
+        }
+        </div>
+    </body>
+
